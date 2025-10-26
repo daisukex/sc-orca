@@ -148,11 +148,7 @@ function automatic logic [DATA_WIDTH-1:0] reg_reset;
   input sc_reg_entry_t ety;
   integer i;
 begin
-  reg_reset = '0;
-  for (i=0; i<DATA_WIDTH; i++) begin
-      if (ety.desc.rattr.fixed[i] | ety.desc.rattr.wr[i] | ety.desc.rattr.w1s[i] | ety.desc.rattr.w1c[i])
-        reg_reset[i] = ety.desc.init[i];
-  end
+  reg_reset = ety.desc.init;
 end
 endfunction
 
