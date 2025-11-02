@@ -222,10 +222,10 @@ begin
 end
 endfunction
 
-// Register Write Event
+// Get Register Write Event
 // ------------------------------
 // Return 1 when a valid register write occurs (bus address matches the register entry).
-function automatic logic is_valid_reg_write;
+function automatic logic get_reg_write_event;
   input sc_reg_entry_t ety;
   input sc_regbus_t bus;
   output sc_reg_event_t evt;
@@ -245,6 +245,24 @@ begin
     evt.regid = ety.regid;
   end
   return (evt.en != '0);
+end
+endfunction
+
+function automatic logic is_reg_write_event;
+  input sc_reg_entry_t ety;
+  input sc_regbus_t bus;
+  sc_reg_event_t evt;
+begin
+  is_reg_write_event = get_reg_write_event(ety, bus, evt);
+end
+endfunction
+
+function automatic logic is_valid_reg_write;
+  input sc_reg_entry_t ety;
+  input sc_regbus_t bus;
+  output sc_reg_event_t evt;
+begin
+  is_valid_reg_write = get_reg_write_event(ety, bus, evt);
 end
 endfunction
 
@@ -270,11 +288,11 @@ begin
 end
 endfunction
 
-// Register Read Event
+// Get Register Read Event
 // ------------------------------
 // Return 1 when a valid register read occurs (bus address matches the register entry).
 // When detected, the event structure is filled with the read data.
-function automatic logic is_valid_reg_read;
+function automatic logic get_reg_read_event;
   input sc_reg_entry_t ety;
   input sc_regbus_t bus;
   output sc_reg_event_t evt;
@@ -292,6 +310,24 @@ begin
     end
   end
   return 0;
+end
+endfunction
+
+function automatic logic is_reg_read_event;
+  input sc_reg_entry_t ety;
+  input sc_regbus_t bus;
+  sc_reg_event_t evt;
+begin
+  is_reg_read_event = get_reg_read_event(ety, bus, evt);
+end
+endfunction
+
+function automatic logic is_valid_reg_read;
+  input sc_reg_entry_t ety;
+  input sc_regbus_t bus;
+  output sc_reg_event_t evt;
+begin
+  is_valid_reg_read = get_reg_read_event(ety, bus, evt);
 end
 endfunction
 
