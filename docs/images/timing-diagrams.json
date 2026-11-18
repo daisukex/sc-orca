@@ -1,0 +1,15 @@
+{signal: [
+  {name: 'Clock',                 wave: 'p.'},
+  {name: 'High to Low',           wave: '10'},
+  {name: 'Low to High',           wave: '01'},
+  {name: 'High to Unknown',       wave: '1x'},
+  {name: 'Low to Unknown',        wave: '0x'},
+  {name: 'Glitch',                wave: '11'},
+  {name: 'Stable bus',            wave: '2.'},
+  {name: 'Bus change',            wave: '22'},
+  {name: 'Stable bus to Unknown', wave: '2x'},
+  {name: 'Stable bus to Hi-Z',    wave: '2z'},
+  {name: 'Hi-Z to Stable bus',    wave: 'z2'},
+  ],
+  config: { hscale: 3}
+}
