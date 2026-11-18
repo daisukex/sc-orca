@@ -67,6 +67,17 @@ Numeric notation::
 * A value without a prefix is decimal.
 * RTL values may use SystemVerilog numeric literals such as `32'h0000_0000`.
 
+=== Timing Diagrams
+
+The elements used in timing diagrams are explained in the Key to timing diagram conventions
+figure.
+
+Shaded portions of buses or signals indicate unknown values. White or colored bus segments without
+shading indicate stable values.
+
+.Key to timing diagram conventions
+image::../images/timing-diagrams.svg[Key to timing diagram conventions]
+
 === Register Description Conventions
 
 Register field information is presented in a table such as the following:
