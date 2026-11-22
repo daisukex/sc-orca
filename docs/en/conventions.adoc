@@ -60,8 +60,8 @@ R/W:: Indicates the field access attribute. The following table defines the acce
 [cols="1,4",width=55%,options="header",]
 |===
 | Access | Description
-| R      | Readable
-| W      | Writable
+| R      | Readable. Write accesses do not generate an error or affect the value of this field.
+| W      | Writable. Read accesses do not generate an error, but the value read has no meaning.
 | R/W    | Readable and writable
 | R/W1C  | Readable. Writing 1 clears the corresponding bit; writing 0 has no effect.
 |===
