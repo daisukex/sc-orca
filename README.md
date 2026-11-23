@@ -33,5 +33,6 @@ Single Event Effects (SEEs), including Single Event Upsets (SEUs).
 
 ## License
 
-This project is licensed under the **Apache License 2.0**.
+This project is licensed under the **CERN Open Hardware Licence Version 2 -
+Weakly Reciprocal (CERN-OHL-W-2.0)**.
 See the [LICENSE](./LICENSE) file for details.
